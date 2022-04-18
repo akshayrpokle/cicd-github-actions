@@ -73,13 +73,13 @@ jobs:
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
-        CLIENT_ID: ${{ secrets.CLIENT_ID }}
-        CLIENT_PASSWORD: ${{ secrets.CLIENT_SECRET }}
+        CLIENTID: ${{ secrets.Client_Id }}
+        CLIENTSECRET: ${{ secrets.Client_Secret }}
         
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -Danypoint.clientId="$CLIENT_ID" \
-         -Danypoint.clientSecret="$CLIENT_PASSWORD" \
+         -DclientId="$CLIENTID" \
+         -DclientSecret="$CLIENTSECRET" \
          -DskipTests
