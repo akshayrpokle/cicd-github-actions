@@ -80,6 +80,6 @@ jobs:
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -Danypoint.clientId="$CLIENT_ID" \
-         -Danypoint.clientSecret="$CLIENT_PASSWORD" \
+         -D.clientId="$CLIENT_ID" \
+         -D.clientSecret="$CLIENT_PASSWORD" \
          -DskipTests
