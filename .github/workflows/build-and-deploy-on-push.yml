@@ -6,6 +6,10 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+  
+env:
+  GLOBAL_NEXUS_USERNAME : ${{ secrets.nexus_username }}
+  GLOBAL_NEXUS_PASSWORD : ${{ secrets.nexus_password }}
     
 jobs:
   build:
