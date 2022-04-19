@@ -75,10 +75,11 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         CLIENTID: ${{ secrets.Client_Id }}
         CLIENTSECRET: ${{ secrets.Client_Secret }}
+        SETTINGS: ${{ secrets.Settings }}
         
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy -DmuleDeploy \
+        mvn $Settings deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -DclientId="$CLIENTID" \
          -DclientSecret="$CLIENTSECRET" \
