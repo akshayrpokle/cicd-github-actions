@@ -81,10 +81,10 @@ jobs:
       env:
         SETTINGS: ${{ secrets.Settings }}
         
-#       run: |
-#         artifactName=$(ls *.jar | head -1)
-#         mvn -s settings.xml deploy -DmuleDeploy \
-#          -Dmule.artifact=$artifactName \
-#          -DclientId="$GLOBAL_PLATFORM_CLIENTID" \
-#          -DclientSecret="$GLOBAL_PLATFORM_SECRET" \
-#          -DskipTests
+      run: |
+        artifactName=$(ls *.jar | head -1)
+        mvn -s settings.xml deploy -DmuleDeploy \
+         -Dmule.artifact=$artifactName \
+         -DclientId="$GLOBAL_PLATFORM_CLIENTID" \
+         -DclientSecret="$GLOBAL_PLATFORM_SECRET" \
+         -DskipTests
