@@ -68,6 +68,10 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: artifacts
+    - name: Echo Settings
+      env: 
+        SETT: ${{ secrets.Settings }}
+      run: echo $SETT
     
     - name: Deploy to Sandbox
       env:
@@ -75,10 +79,11 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         CLIENTID: ${{ secrets.Client_Id }}
         CLIENTSECRET: ${{ secrets.Client_Secret }}
+        SETTINGS: ${{ secrets.Settings }}
         
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy -DmuleDeploy \
+        mvn -s $SETTINGS deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -DclientId="$CLIENTID" \
          -DclientSecret="$CLIENTSECRET" \
