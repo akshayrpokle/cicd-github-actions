@@ -83,7 +83,7 @@ jobs:
         
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn $Settings deploy -DmuleDeploy \
+        mvn $SETTINGS deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -DclientId="$CLIENTID" \
          -DclientSecret="$CLIENTSECRET" \
