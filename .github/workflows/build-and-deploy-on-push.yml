@@ -10,6 +10,10 @@ on:
 env:
   GLOBAL_NEXUS_USERNAME : ${{ secrets.nexus_username }}
   GLOBAL_NEXUS_PASSWORD : ${{ secrets.nexus_password }}
+  GLOBAL_PLATFORM_CLIENTID : ${{ secrets.Client_Id }}
+  GLOBAL_PLATFORM_SECRET : ${{ secrets.Client_Secret }}  
+  GLOBAL_PLATFORM_USERNAME: ${{ secrets.USERNAME }}
+  GLOBAL_PLATFORM_PASSWORD: ${{ secrets.PASSWORD }}
     
 jobs:
   build:
@@ -75,18 +79,12 @@ jobs:
     
     - name: Deploy to Sandbox
       env:
-        USERNAME: ${{ secrets.USERNAME }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        CLIENTID: ${{ secrets.Client_Id }}
-        CLIENTSECRET: ${{ secrets.Client_Secret }}
         SETTINGS: ${{ secrets.Settings }}
-        
-      run: mvn -b clean package -s settings.xml
         
 #       run: |
 #         artifactName=$(ls *.jar | head -1)
 #         mvn -s settings.xml deploy -DmuleDeploy \
 #          -Dmule.artifact=$artifactName \
-#          -DclientId="$CLIENTID" \
-#          -DclientSecret="$CLIENTSECRET" \
+#          -DclientId="$GLOBAL_PLATFORM_CLIENTID" \
+#          -DclientSecret="$GLOBAL_PLATFORM_SECRET" \
 #          -DskipTests
