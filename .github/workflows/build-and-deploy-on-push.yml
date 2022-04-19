@@ -81,7 +81,7 @@ jobs:
         CLIENTSECRET: ${{ secrets.Client_Secret }}
         SETTINGS: ${{ secrets.Settings }}
         
-      run: mvn -b clean package -s .maven/settings.xml
+      run: mvn -b clean package -s settings.xml
         
 #       run: |
 #         artifactName=$(ls *.jar | head -1)
