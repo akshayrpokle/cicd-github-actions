@@ -68,6 +68,10 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: artifacts
+    - name: Echo Settings
+      env: 
+        SETT: ${{ secrets.Settings }}
+      run: echo SETT
     
     - name: Deploy to Sandbox
       env:
