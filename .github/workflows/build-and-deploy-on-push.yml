@@ -71,7 +71,7 @@ jobs:
     - name: Echo Settings
       env: 
         SETT: ${{ secrets.Settings }}
-      run: echo SETT
+      run: echo $SETT
     
     - name: Deploy to Sandbox
       env:
