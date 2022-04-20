@@ -14,6 +14,7 @@ env:
   GLOBAL_PLATFORM_SECRET : ${{ secrets.Client_Secret }}  
   GLOBAL_PLATFORM_USERNAME: ${{ secrets.USERNAME }}
   GLOBAL_PLATFORM_PASSWORD: ${{ secrets.PASSWORD }}
+  GLOBAL_SETTINGS: ${{ secrets.Settings }}
     
 jobs:
   build:
@@ -78,8 +79,6 @@ jobs:
         name: artifacts
     
     - name: Deploy to Sandbox
-      env:
-        SETTINGS: ${{ secrets.Settings }}
         
       run: |
         artifactName=$(ls *.jar | head -1)
