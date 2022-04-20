@@ -1,6 +1,6 @@
 # This workflow will build a MuleSoft project and deploy to CloudHub
 
-name: Build and Deploy
+name: Cloudhub deployment with Maven
 
 on:
   push:
@@ -26,7 +26,25 @@ jobs:
     
     - name: Checkout repository
       uses: actions/checkout@v2
+      
+    - name: Cache Dependencies
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        cache: maven
+        
+    - name: Build with Maven
+      run: mvn clean -B package -s settings.xml
+      
+    - name: Upload Artifact
+      run: mkdir staging && cp target/*.jar staging
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Package
+        path: staging
     
-    - name: Build and Deploy with Maven
-      run: mvn clean -B package deploy -DmuleDeploy -s settings.xml
+    - name: Deploy with Maven
+      run: mvn deploy -DmuleDeploy -s settings.xml
     
