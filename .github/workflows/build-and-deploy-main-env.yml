@@ -36,8 +36,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
         
-    - name: Build with Maven
-      run: mvn clean -B package -s settings.xml
+#     - name: Build with Maven
+#       run: mvn clean -B package -s settings.xml
     
     - name: Deploy with Maven
       run: mvn -s settings.xml deploy -DmuleDeploy 
