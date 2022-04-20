@@ -1,0 +1,52 @@
+# This workflow will build a MuleSoft project and deploy to CloudHub
+
+name: Cloudhub deployment with Maven
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+  workflow_dispatch:
+  
+env:
+  GLOBAL_NEXUS_USERNAME : ${{ secrets.nexus_username }}
+  GLOBAL_NEXUS_PASSWORD : ${{ secrets.nexus_password }}
+  GLOBAL_PLATFORM_CLIENTID : ${{ secrets.Client_Id }}
+  GLOBAL_PLATFORM_SECRET : ${{ secrets.Client_Secret }}  
+  GLOBAL_PLATFORM_USERNAME: ${{ secrets.USERNAME }}
+  GLOBAL_PLATFORM_PASSWORD: ${{ secrets.PASSWORD }}
+  GLOBAL_SETTINGS: ${{ secrets.Settings }}
+    
+jobs:
+  buildAndDeploy:
+    runs-on: ubuntu-latest
+    environment: dev
+    
+    steps:
+    
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+#     - name: Cache Dependencies
+#       uses: actions/setup-java@v2
+#       with:
+#         java-version: '11'
+#         distribution: 'adopt'
+#         cache: maven
+        
+    - name: Build with Maven
+      run: mvn clean -B package -s settings.xml
+      
+#     - name: Upload Artifact
+#       run: mkdir staging && cp target/*.jar staging
+      
+#     - uses: actions/upload-artifact@v2
+#       with:
+#         name: Package
+#         path:  staging
+    
+    - name: Deploy with Maven
+      run: mvn deploy -DmuleDeploy -s settings.xml
+    
