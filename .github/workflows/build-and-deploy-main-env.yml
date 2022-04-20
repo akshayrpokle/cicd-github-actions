@@ -27,7 +27,7 @@ env:
   
     
 jobs:
-  Build:
+  BuildAndDeploy:
     runs-on: ubuntu-latest
     environment: Prod
     
@@ -38,12 +38,6 @@ jobs:
         
     - name: Build with Maven
       run: mvn clean -B package -s settings.xml
-      
-  Deploy:
-    needs: Build
-    runs-on: ubuntu-latest
-    
-    steps:
     
     - name: Deploy with Maven
       run: mvn -s settings.xml deploy -DmuleDeploy 
