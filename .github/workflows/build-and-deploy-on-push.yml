@@ -84,7 +84,7 @@ jobs:
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -s $GLOBAL_SETTINGS \
+         -s settings.xml \
          -DskipTests 
         
 #       run: |
