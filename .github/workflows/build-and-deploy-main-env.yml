@@ -27,7 +27,7 @@ env:
   
     
 jobs:
-  BuildAndDeploy:
+  Build:
     runs-on: ubuntu-latest
     environment: Prod
     
@@ -35,10 +35,46 @@ jobs:
     
     - name: Checkout repository
       uses: actions/checkout@v2
+	  
+    - name: Cache Dependencies
+      uses: actions/setup-java@v2
+       with:
+         java-version: '11'
+         distribution: 'adopt'
+         cache: maven
         
     - name: Build with Maven
-      run: mvn clean -B package -s settings.xml
-    
-    - name: Deploy with Maven
-      run: mvn -s settings.xml deploy -DmuleDeploy 
+      run: mvn -B clean package -s settings.xml
+	  
+    - name: Upload Artifact
+      run: mkdir staging && cp target/*.jar staging
+      
+    - uses: actions/upload-artifact@v2
+       with:
+         name: Package
+         path:  staging
+		 
+  Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Cache Dependencies
+      uses: actions/setup-java@v2
+       with:
+         java-version: '11'
+         distribution: 'adopt'
+         cache: maven
+
+    - name: Download Artifacts
+      uses: action/download-artifact@v3.0.0
+       with:
+         name: Package
+
+   - name: Deploy with Maven
+     run: mvn -B deploy -DmuleDeploy -s settings.xml
     
