@@ -18,6 +18,13 @@ env:
   GLOBAL_PLATFORM_USERNAME: ${{ secrets.USERNAME }}
   GLOBAL_PLATFORM_PASSWORD: ${{ secrets.PASSWORD }}
   GLOBAL_SETTINGS: ${{ secrets.Settings }}
+  GLOBAL_GRANT_TYPE: ${{ secrets.GRANT_TYPE }}
+  GLOBAL_APPLICATION_NAME: ${{ secrets.APPLICATION_NAME }}
+  GLOBAL_ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+  GLOBAL_WORKER_TYPE: ${{ secrets.WORKER_TYPE }}
+  GLOBAL_REGION: ${{ secrets.REGION }}
+  GLOBAL_WORKERS: ${{ secrets.WORKERS }}
+  
     
 jobs:
   buildAndDeploy:
