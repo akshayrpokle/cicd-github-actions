@@ -71,7 +71,7 @@ jobs:
          cache: maven
 
     - name: Download Artifacts
-      uses: action/download-artifact@v3.0.0
+      uses: action/download-artifact@v2
        with:
          name: Package
 
