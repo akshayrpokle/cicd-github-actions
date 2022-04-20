@@ -8,8 +8,8 @@
     </server>
     <server>
             <id>anypoint-exchange-v2</id>
-            <username>${ env.GLOBAL_PLATFORM_CLIENTID }</username>
-            <password>${ env.GLOBAL_PLATFORM_SECRET }</password>
+            <connectedAppClientId>${ env.GLOBAL_PLATFORM_CLIENTID }</connectedAppClientId>
+            <connectedAppClientSecret>${ env.GLOBAL_PLATFORM_SECRET }</connectedAppClientSecret>
         </server>
     </servers>
 <profiles>
