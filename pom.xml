@@ -35,9 +35,9 @@
 						<muleVersion>4.4.0</muleVersion>					
 						<username>${env.GLOBAL_PLATFORM_USERNAME}</username>					
 						<password>${env.GLOBAL_PLATFORM_PASSWORD}</password>
-						<!--<connectedAppClientId>${clientId}</connectedAppClientId>	
+						<connectedAppClientId>${clientId}</connectedAppClientId>	
 						<connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
-						<connectedAppGrantType>client_credentials</connectedAppGrantType> -->		
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>		
 						<applicationName>cicd-github-actions-demo</applicationName>				
 						<environment>Sandbox</environment>					
 						<workerType>MICRO</workerType>
