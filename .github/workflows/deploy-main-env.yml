@@ -1,6 +1,6 @@
 # This workflow will build a MuleSoft project and deploy to CloudHub
 
-name: Cloudhub deployment with Maven
+name: Cloudhub deployment with Maven [Main]
 
 on:
   push:
