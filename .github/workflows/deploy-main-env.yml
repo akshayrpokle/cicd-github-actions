@@ -36,3 +36,6 @@ jobs:
     
     - name: Deploy with Maven
       run: mvn -s settings.xml deploy -DmuleDeploy 
+      
+    - name: Upload artifact to Exchange
+      run: mvn -e -s settings.xml -DskipTests clean deploy
