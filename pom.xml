@@ -32,9 +32,9 @@
 				<configuration>
 					<cloudHubDeployment>	
 						<properties>
-							<runtime.securePropKey>${ENCRYPTION_KEY}</runtime.securePropKey>
-							<anypoint.platform.client_id>${ANYPOINT_CLIENT_ID}</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>${ANYPOINT_CLIENT_SECRET}</anypoint.platform.client_secret>
+							<runtime.securePropKey>${env.GLOBAL_ENCRYPTION_KEY}</runtime.securePropKey>
+							<anypoint.platform.client_id>${env.ANYPOINT_CLIENT_ID}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${env.ANYPOINT_CLIENT_SECRET}</anypoint.platform.client_secret>
 							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
 						</properties>
 						<uri>https://anypoint.mulesoft.com</uri>					
