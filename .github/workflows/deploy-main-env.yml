@@ -22,6 +22,9 @@ env:
   GLOBAL_WORKER_TYPE: ${{ secrets.WORKER_TYPE }}
   GLOBAL_REGION: ${{ secrets.REGION }}
   GLOBAL_WORKERS: ${{ secrets.WORKERS }}
+  GLOBAL_ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
+  GLOBAL_ANYPOINT_CLIENT_ID: ${{ secrets.ANYPOINT_CLIENT_SECRET }}
+  GLOBAL_ANYPOINT_CLIENT_SECRET: ${{ secrets.ANYPOINT_CLIENT_SECRET }}
   
     
 jobs:
@@ -36,3 +39,6 @@ jobs:
     
     - name: Deploy with Maven
       run: mvn -s settings.xml deploy -DmuleDeploy 
+      
+    - name: Upload artifact to Exchange
+      run: mvn -e -s settings.xml -DskipTests clean deploy

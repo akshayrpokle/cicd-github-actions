@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>5c64a10a-e7b0-4ffc-83af-5f72b2143314</groupId>
 	<artifactId>cicd-github-actions-demo</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
@@ -30,11 +30,15 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHubDeployment>				
+					<cloudHubDeployment>	
+						<properties>
+							<runtime.securePropKey>${env.GLOBAL_ENCRYPTION_KEY}</runtime.securePropKey>
+							<anypoint.platform.client_id>${env.GLOBAL_ANYPOINT_CLIENT_ID}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${env.GLOBAL_ANYPOINT_CLIENT_SECRET}</anypoint.platform.client_secret>
+							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
+						</properties>
 						<uri>https://anypoint.mulesoft.com</uri>					
-						<muleVersion>4.4.0</muleVersion>					
-						<username>${env.GLOBAL_PLATFORM_USERNAME}</username>					
-						<password>${env.GLOBAL_PLATFORM_PASSWORD}</password>
+						<muleVersion>4.4.0</muleVersion>	
 						<connectedAppClientId>${env.GLOBAL_PLATFORM_CLIENTID}</connectedAppClientId>	
 						<connectedAppClientSecret>${env.GLOBAL_PLATFORM_SECRET}</connectedAppClientSecret>
 						<connectedAppGrantType>${env.GLOBAL_GRANT_TYPE}</connectedAppGrantType>		
@@ -91,5 +95,14 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	
+	<distributionManagement>
+		<repository>
+			<id>anypoint-exchange-v2</id>
+			<name>Corporate Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v2/organizations/${project.groupId}/maven</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
 
 </project>
