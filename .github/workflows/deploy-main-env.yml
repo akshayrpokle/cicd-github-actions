@@ -27,7 +27,7 @@ env:
 jobs:
   BuildAndDeploy:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: main
     
     steps:
     
