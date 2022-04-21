@@ -38,4 +38,4 @@ jobs:
       run: mvn -s settings.xml deploy -DmuleDeploy 
     
     - name: Upload artifact to Exchange
-      run: mvn -DskipTests clean deploy
+      run: mvn -s settings.xml -DskipTests clean deploy
