@@ -2,19 +2,26 @@
 <settings>
 <servers>
     <server>
+	<!-- dev change -->
         <id>MuleRepository</id>
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
+	    
+	    
     </server>
     <server>
 	    <id>anypoint-exchange-v2</id>
             <username>~~~Client~~~</username>
             <password>${env.GLOBAL_PLATFORM_CLIENTID}~?~${env.GLOBAL_PLATFORM_SECRET}</password>
+	    
+	    
     </server>
 </servers>
 <profiles>
     <profile>
         <id>Mule</id>
+	    
+	    
         <activation>
             <activeByDefault>true</activeByDefault>
         </activation>
