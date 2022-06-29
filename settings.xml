@@ -11,6 +11,7 @@
             <username>~~~Client~~~</username>
             <password>${env.GLOBAL_PLATFORM_CLIENTID}~?~${env.GLOBAL_PLATFORM_SECRET}</password>
     </server>
+	
 </servers>
 <profiles>
     <profile>
