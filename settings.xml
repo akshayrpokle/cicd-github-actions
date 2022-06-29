@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
 <servers>
-    <server>
-	    
-	    
+    <server>  
         <id>MuleRepository</id>
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
