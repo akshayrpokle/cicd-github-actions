@@ -2,7 +2,7 @@
 <settings>
 <servers>
     <server>
-	<!-- dev change -->
+	<!-- feature change -->
         <id>MuleRepository</id>
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
