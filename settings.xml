@@ -54,7 +54,6 @@
                     <enabled>true</enabled>
                 </snapshots>
             </repository>
-	      <!-- asdfa dadsaf  -->
         </repositories>
     </profile>
 </profiles>   
