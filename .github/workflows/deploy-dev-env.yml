@@ -4,9 +4,9 @@ name: Cloudhub deployment with Maven [Dev]
 
 on:
   push:
-    branches: [ origin/dev ]
+    branches: [ dev ]
   pull_request:
-    branches: [ origin/dev ]
+    branches: [ dev ]
   
 env:
   GLOBAL_NEXUS_USERNAME : ${{ secrets.nexus_username }}
