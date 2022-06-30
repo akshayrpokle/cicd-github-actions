@@ -2,7 +2,7 @@
 <settings>
 <servers>
     <server>
-	<!-- conflict changes -->
+	<!-- asdfasd asdfa sfa sdfa sdflkj l; lkj ;sdf sdf ;lsd -->
         <id>MuleRepository</id>
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
@@ -14,7 +14,7 @@
             <password>${env.GLOBAL_PLATFORM_CLIENTID}~?~${env.GLOBAL_PLATFORM_SECRET}</password>
     </server>
 </servers>
-<profiles>
+<profiles> <!-- dev specific changes -->
     <profile>
         <id>Mule</id>
         <activation>
