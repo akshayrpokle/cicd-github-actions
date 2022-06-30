@@ -2,11 +2,13 @@
 <settings>
 <servers>
     <server>
+	<!-- conflict changes -->
         <id>MuleRepository</id>
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
     </server>
     <server>
+	    <!-- feature specific changes -->
 	    <id>anypoint-exchange-v2</id>
             <username>~~~Client~~~</username>
             <password>${env.GLOBAL_PLATFORM_CLIENTID}~?~${env.GLOBAL_PLATFORM_SECRET}</password>
