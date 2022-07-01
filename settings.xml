@@ -2,6 +2,7 @@
 <settings>
 <servers>
     <server>
+	<!-- conflict changes with feature  -->
         <id>MuleRepository</id>
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
@@ -16,6 +17,7 @@
     <profile>
         <id>Mule</id>
         <activation>
+		<!-- dev specific changes  -->
             <activeByDefault>true</activeByDefault>
         </activation>
         <repositories>
