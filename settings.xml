@@ -3,6 +3,7 @@
 <servers>
     <server>
         <id>MuleRepository</id>
+	    <!-- conflict code -->
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
     </server>
@@ -11,6 +12,7 @@
             <username>~~~Client~~~</username>
             <password>${env.GLOBAL_PLATFORM_CLIENTID}~?~${env.GLOBAL_PLATFORM_SECRET}</password>
     </server>
+<!-- feature changes -->
 </servers>
 <profiles>
     <profile>
