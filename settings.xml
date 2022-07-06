@@ -3,6 +3,7 @@
 <servers>
     <server>
         <id>MuleRepository</id>
+	    <!-- conflict asdfasdf asdfasdf -->
             <username>${ env.GLOBAL_NEXUS_USERNAME }</username>
             <password>${ env.GLOBAL_NEXUS_PASSWORD }</password>
     </server>
@@ -20,6 +21,7 @@
         </activation>
         <repositories>
             <repository>
+		   <!-- dev changes -->
                 <id>MuleRepository</id>
                 <name>MuleRepository</name>
                 <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
