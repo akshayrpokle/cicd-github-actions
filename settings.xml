@@ -22,6 +22,7 @@
         </activation>
         <repositories>
             <repository>
+		   <!-- dev changes -->
                 <id>MuleRepository</id>
                 <name>MuleRepository</name>
                 <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
