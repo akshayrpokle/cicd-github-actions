@@ -40,7 +40,7 @@
             <activeByDefault>true</activeByDefault>
         </activation>
 		<properties>
-                <mulesoft.exchange.groupid>5c64a10a-e7b0-4ffc-83af-5f72b2143314</mulesoft.exchange.groupid>
+                <mulesoft.exchange.groupid>f7e4a870-eeaa-4089-bc94-5649571b767d</mulesoft.exchange.groupid>
          </properties>
         <repositories>
             <repository>
