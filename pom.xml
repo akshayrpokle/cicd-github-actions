@@ -4,7 +4,7 @@
 
 	<groupId>f7e4a870-eeaa-4089-bc94-5649571b767d</groupId>
 	<artifactId>cicd-github-actions-demo</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-github-actions-demo</name>
@@ -49,7 +49,6 @@
 						<workers>${env.GLOBAL_WORKERS}</workers>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
-					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
