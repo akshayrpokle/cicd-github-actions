@@ -8,7 +8,6 @@
     </server>
     <server>
 	    <id>anypoint-exchange-v2</id>
-            <username>~~~Client~~~</username>
             <password>${env.GLOBAL_PLATFORM_CLIENTID}~?~${env.GLOBAL_PLATFORM_SECRET}</password>
     </server>
 </servers>
@@ -20,7 +19,6 @@
         </activation>
         <repositories>
             <repository>
-		   <!-- dev changes -->
                 <id>MuleRepository</id>
                 <name>MuleRepository</name>
                 <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
@@ -40,7 +38,7 @@
             <activeByDefault>true</activeByDefault>
         </activation>
 		<properties>
-                <mulesoft.exchange.groupid>5c64a10a-e7b0-4ffc-83af-5f72b2143314</mulesoft.exchange.groupid>
+                <mulesoft.exchange.groupid>f7e4a870-eeaa-4089-bc94-5649571b767d</mulesoft.exchange.groupid>
          </properties>
         <repositories>
             <repository>
