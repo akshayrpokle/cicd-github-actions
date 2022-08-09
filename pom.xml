@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>5c64a10a-e7b0-4ffc-83af-5f72b2143314</groupId>
+	<groupId>f7e4a870-eeaa-4089-bc94-5649571b767d</groupId>
 	<artifactId>cicd-github-actions-demo</artifactId>
-	<version>1.0.6-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-github-actions-demo</name>
@@ -49,6 +49,7 @@
 						<workers>${env.GLOBAL_WORKERS}</workers>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
