@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0</app.runtime>
-		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -30,20 +30,20 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHubDeployment>	
+					<cloudHubDeployment>
 						<properties>
 							<runtime.securePropKey>${env.GLOBAL_ENCRYPTION_KEY}</runtime.securePropKey>
 							<anypoint.platform.client_id>${env.GLOBAL_ANYPOINT_CLIENT_ID}</anypoint.platform.client_id>
 							<anypoint.platform.client_secret>${env.GLOBAL_ANYPOINT_CLIENT_SECRET}</anypoint.platform.client_secret>
 							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
 						</properties>
-						<uri>https://anypoint.mulesoft.com</uri>					
-						<muleVersion>4.4.0</muleVersion>	
-						<connectedAppClientId>${env.GLOBAL_PLATFORM_CLIENTID}</connectedAppClientId>	
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<connectedAppClientId>${env.GLOBAL_PLATFORM_CLIENTID}</connectedAppClientId>
 						<connectedAppClientSecret>${env.GLOBAL_PLATFORM_SECRET}</connectedAppClientSecret>
-						<connectedAppGrantType>${env.GLOBAL_GRANT_TYPE}</connectedAppGrantType>		
-						<applicationName>${env.GLOBAL_APPLICATION_NAME}</applicationName>				
-						<environment>${env.GLOBAL_ENVIRONMENT}</environment>					
+						<connectedAppGrantType>${env.GLOBAL_GRANT_TYPE}</connectedAppGrantType>
+						<applicationName>${env.GLOBAL_APPLICATION_NAME}</applicationName>
+						<environment>${env.GLOBAL_ENVIRONMENT}</environment>
 						<workerType>${env.GLOBAL_WORKER_TYPE}</workerType>
 						<region>${env.GLOBAL_REGION}</region>
 						<workers>${env.GLOBAL_WORKERS}</workers>
@@ -82,6 +82,12 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+			<id>anypoint-exchange-v3</id>
+			<name>Anypoint Exchange V3</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+			<layout>default</layout>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -95,7 +101,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
 	<distributionManagement>
 		<repository>
 			<id>anypoint-exchange-v2</id>
